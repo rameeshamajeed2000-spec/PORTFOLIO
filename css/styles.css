@@ -194,8 +194,7 @@ em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07em; }
     .hero-index { bottom: 35px; right: 6vw; }
     .hero-skills { bottom: 0; }
     .hero-skills-track { min-height: 94px; }
-    .hero-skill-card { min-width: 145px; padding: 14px 16px; }
-    .hero-skill-card { gap: 40px; }
+    .hero-skill-card { gap: clamp(14px, 4vw, 28px); min-width: clamp(128px, 34vw, 160px); padding: clamp(12px, 3vw, 14px) clamp(13px, 4vw, 16px); }
     .intro, .skills, .work, .journey, .contact { padding-bottom: 90px; padding-top: 90px; }
     .intro-grid, .section-heading, .contact-grid { display: block; margin-top: 70px; }
     .display-copy, .section-heading h2 { font-size: clamp(3.4rem, 15vw, 6rem); }
@@ -221,4 +220,90 @@ em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07em; }
     .contact-links { margin-top: 65px; }
     .contact-links a { grid-template-columns: 1fr 2fr auto; }
     .site-footer { align-items: flex-start; flex-direction: column; gap: 13px; }
+}
+
+@media (max-width: 1024px) {
+    .hero-title { font-size: clamp(4rem, 10vw, 7.5rem); max-width: 75vw; }
+    .hero-portrait { width: 48vw; }
+    .intro-grid, .section-heading, .contact-grid { gap: 5vw; }
+    .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .skill-item { min-height: 205px; }
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project-card { height: auto; min-height: 560px; }
+    .project-card h3 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    .project-info { flex-wrap: wrap; gap: 18px; }
+    .contact h2 { font-size: clamp(3.6rem, 8vw, 6rem); }
+}
+
+@media (max-width: 760px) {
+    .menu-toggle span { background: var(--paper); }
+    .menu-toggle.open span { background: var(--ink); }
+    .hero-title { font-size: clamp(3rem, 15vw, 5.8rem); max-width: 100%; }
+    .hero-bottom { gap: 25px; }
+    .hero-bottom p { max-width: 220px; }
+    .display-copy, .section-heading h2 { font-size: clamp(2.8rem, 13vw, 5rem); }
+    .skills-grid { gap: 10px; }
+    .skill-item { min-height: 175px; padding: 18px 16px 20px; }
+    .skill-item + .skill-item, .skill-item:nth-child(3) { padding-left: 16px; }
+    .skill-item h3 { font-size: 21px; margin-top: 46px; }
+    .skill-item p { font-size: 12px; line-height: 1.5; }
+    .projects-grid { display: block; }
+    .project-card, .project-card:not(.project-featured), .project-featured { height: auto; min-height: 0; margin-top: 0; padding: 15px 18px 30px; }
+    .project-card > .project-image, .project-card:not(.project-featured) .project-image { height: 230px; inset: auto; margin: -15px -18px 0; position: relative; }
+    .project-card h3 { font-size: clamp(2rem, 11vw, 3.4rem); }
+    .project-card > p { font-size: 14px; }
+    .project-meta { gap: 12px; }
+    .project-meta span:last-child { text-align: right; }
+    .project-info { align-items: flex-start; flex-direction: column; }
+    .project-card:nth-child(1) .project-info::after { font-size: 11px; padding: 10px 12px; }
+    .timeline-row h3 { font-size: 21px; }
+    .contact h2 { font-size: clamp(3.5rem, 16vw, 6rem); }
+    .contact-links a { gap: 14px; grid-template-columns: 68px minmax(0, 1fr) auto; }
+    .contact-links strong { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 480px) {
+    .site-header { padding-left: 5vw; padding-right: 5vw; }
+    .section-shell { padding-left: 5vw; padding-right: 5vw; }
+    .hero { min-height: 720px; padding-top: 130px; }
+    .hero-topline { left: 5vw; right: 5vw; }
+    .hero-portrait { height: 58%; width: 110vw; }
+    .portrait-ring { height: 34vh; right: -23vw; top: 29vh; width: 105vw; }
+    .hero-bottom { align-items: flex-start; flex-direction: column; margin-top: 42px; }
+    .circle-link { height: 48px; width: 48px; }
+    .hero-index { bottom: 34px; right: 5vw; }
+    .hero-skill-card { font-size: clamp(10px, 2.7vw, 12px); gap: clamp(12px, 4vw, 22px); min-width: clamp(120px, 34vw, 142px); padding: 12px clamp(11px, 3.5vw, 13px); }
+    .intro, .skills, .work, .journey, .contact { padding-bottom: 72px; padding-top: 72px; }
+    .intro-grid, .section-heading, .contact-grid { margin-top: 52px; }
+    .display-copy, .section-heading h2 { font-size: clamp(2.65rem, 13.5vw, 4.5rem); }
+    .intro-copy, .section-heading p { margin-top: 32px; }
+    .skills-grid { grid-template-columns: 1fr; margin-top: 52px; }
+    .skill-item, .skill-item:nth-child(3), .skill-item + .skill-item { min-height: 150px; padding: 18px 16px 20px; }
+    .skill-item h3 { margin-top: 28px; }
+    .skill-item:nth-child(2), .skill-item:nth-child(3), .skill-item:nth-child(4) { border-top: 0; border-right: 0; }
+    .marquee { margin-top: 60px; }
+    .work-filters { flex-wrap: wrap; gap: 14px 20px; margin: 42px 0 24px; }
+    .project-card > .project-image, .project-card:not(.project-featured) .project-image { height: 205px; }
+    .project-card:nth-child(1) .project-meta { align-items: flex-start; flex-direction: column; gap: 4px; }
+    .project-card:nth-child(1) .project-meta span:last-child { text-align: left; }
+    .timeline { margin-top: 52px; }
+    .contact-links { margin-top: 48px; }
+    .contact-links a { grid-template-columns: 58px minmax(0, 1fr) auto; min-height: 82px; }
+    .contact-links strong { font-size: 14px; }
+}
+
+@media (max-width: 1024px) {
+    .hero-skills { overflow: visible; }
+    .hero-skills-track { animation: none; gap: 12px; overflow-x: auto; padding: 0 5vw 5px; scroll-snap-type: x mandatory; scrollbar-width: none; transform: none; width: 100%; }
+    .hero-skills-track::-webkit-scrollbar { display: none; }
+    .hero-skill-card { min-width: clamp(150px, 30vw, 260px); scroll-snap-align: start; }
+}
+
+@media (max-width: 600px) {
+    .hero-skills-track { min-height: 0; }
+    .hero-skill-card { align-self: center; font-size: clamp(9px, 2.5vw, 11px); gap: clamp(9px, 3vw, 14px); min-height: 0; min-width: clamp(118px, 36vw, 170px); padding: 10px clamp(9px, 3vw, 12px); }
+    .hero-portrait { opacity: 1; width: 106vw; }
+    .hero-portrait::after { filter: grayscale(0) sepia(0) saturate(1.25) contrast(1.1) brightness(1.25); opacity: 1; }
+    .hero-portrait::before { background: linear-gradient(90deg, #10151a 0%, rgba(16, 21, 26, .46) 18%, rgba(16, 21, 26, .04) 72%), linear-gradient(0deg, rgba(16, 21, 26, .48), transparent 42%); }
+    .hero::after { background: linear-gradient(90deg, rgba(8, 12, 16, .82) 0%, rgba(8, 12, 16, .48) 42%, rgba(8, 12, 16, .04) 100%), linear-gradient(0deg, rgba(8, 12, 16, .42), transparent 62%); }
 }
